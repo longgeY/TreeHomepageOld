@@ -86,7 +86,7 @@ header {
     text-align: center;
     font-size: 40px;
     color: white;
-    height: 1300px;
+    height: 350px;
     
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2d/Sugar_Loaf_Winona.jpg" );
     background-position: 100%; 
@@ -116,3 +116,4 @@ footer {
 .row {
     display: flex;
 }
+

@@ -53,18 +53,47 @@
                     {
                         var x, i, xmlDoc, txt;
                         xmlDoc = xml.responseXML; //Response returned as XML data
-                        txt = "<ol>";
+                       // txt = "";
                         x = xmlDoc.getElementsByTagName("ThemeEntityAbridgedData");
                       // txt = x[1].childNodes[1].innerHTML;
                       // var imgLocation = x[1].childNodes[0].innerHTML;
                         //console.log(imgLocation);
                         for (i = 0; i< x.length; i++) {
-                          txt += "<li>" + x[i].childNodes[1].innerHTML + "</li><br>";
+                         // txt += "<li>" + x[i].childNodes[1].innerHTML + "</li><br>";
+                            var txt = x[i].childNodes[1].innerHTML[0];
+                            //window.alert(txt);
+                            var uni = txt.charCodeAt(0)- 65;
+
+                            // Create an "li" node:
+                            var node = document.createElement("div");
+                            node.className = "tree";
+                            node.innerHTML = x[i].childNodes[1].innerHTML;
+                            
+                            //document.getElementsByTagName("div")
+
+                            document.getElementsByClassName("sec")[uni].appendChild (node);
+                            
+                            //window.alert("done");
                         }
                         //imgLoc2 = "<img src=" + imgLocation + ">";
-                        txt+="</ol>";
-                        document.getElementById("newHTML").innerHTML = txt;
+                        
+                       // document.getElementById("newHTML").innerHTML = txt;
                     }
+                    
+                    function createSections()
+                    {
+                        txt = "";
+                        for (var i = 0; i< 26; i++) {
+                            var chr = String.fromCharCode(65 + i);
+                          txt += '<section class ="sec">'  + chr + "</section><br>";
+                        }
+                        document.getElementById("newHTML").innerHTML = txt;
+                    
+                    }
+                    createSections();
+                    //window.alert(document.getElementsByClassName("newHtml").innerHTML);
+                    //document.getElementsByClassName("sec")[0].innerHTML = "ok";
+                    loadXMLDoc() 
                     </script>
                   </div>
                 </div>

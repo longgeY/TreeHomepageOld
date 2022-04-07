@@ -8,6 +8,53 @@
             <title>Tree Homepage</title>
 
             <link rel="stylesheet" href="Homepage.css">
+
+            <style>
+                .sec
+                {
+                    border: 2px solid royalblue;
+                    margin: 20px;
+                }
+                .sectext
+                {
+                    background: plum;
+                    margin-top: 0%;
+                    height: 40px;
+                }
+                .tree
+                {
+                    border: 1px solid rebeccapurple;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                    width: 500px;
+                    height: 200px;
+                    background: white;
+                    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+                    color: white;
+                    box-shadow: 8px 8px rgba(0,0,0,.15);
+                }
+                .tree:hover
+                {
+                    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+                    box-shadow: 4px 4px rgba(0,0,0,.25);
+                }
+                .treeimg
+                {
+
+                }
+                .treetext
+                {
+                    padding: 10px;
+                    color: black;
+                    font-family: 'Trocchi', serif; 
+                    font-size: 30px; 
+                    font-weight: normal; 
+                    line-height: 48px; 
+                    margin: 0;
+                }
+            </style>
         </head>
 
         <body>
@@ -30,7 +77,6 @@
                     <h1>London</h1>
                     <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
                     <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
-                
 
                   <div id = "newHTML">
                     <script>
@@ -67,7 +113,8 @@
                             // Create an "li" node:
                             var node = document.createElement("div");
                             node.className = "tree";
-                            node.innerHTML = x[i].childNodes[1].innerHTML;
+                            node.innerHTML = '<p class="treetext">' + x[i].childNodes[1].innerHTML + "</p>" +
+                            '<img calss="treeimg" src="' + x[i].childNodes[0].innerHTML + '" alt="Tree" width="100" height="100">';
                             
                             //document.getElementsByTagName("div")
 
@@ -85,7 +132,7 @@
                         txt = "";
                         for (var i = 0; i< 26; i++) {
                             var chr = String.fromCharCode(65 + i);
-                          txt += '<section class ="sec">'  + chr + "</section><br>";
+                          txt += '<section class ="sec">'  + '<p class = "sectext"> <a href="#>' + chr + '"</a>' + chr + '</p>' + "</section><br>";
                         }
                         document.getElementById("newHTML").innerHTML = txt;
                     

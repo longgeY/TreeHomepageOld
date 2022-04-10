@@ -23,36 +23,51 @@
                 }
                 .tree
                 {
-                    border: 1px solid rebeccapurple;
+                    border: 1px solid transparent;
                     margin-left: auto;
                     margin-right: auto;
                     margin-top: 50px;
                     margin-bottom: 50px;
-                    width: 500px;
-                    height: 200px;
+                    width: 510px;
+                    height: 190px;
                     background: white;
-                    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+                   /* border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
                     color: white;
-                    box-shadow: 8px 8px rgba(0,0,0,.15);
+                    box-shadow: 8px 8px rgba(0,0,0,.15);*/
                 }
-                .tree:hover
+                .treetext:hover
                 {
-                    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
-                    box-shadow: 4px 4px rgba(0,0,0,.25);
+                    box-shadow: 2px 5px 5px lightgray;
+                    
                 }
-                .treeimg
+                .treeimage
                 {
-
+                    width:130px; 
+                    height:150px; 
+                    border-radius: 25px; 
+                    box-shadow: 5px 5px 5px lightgray;
+                    position: absolute;
                 }
                 .treetext
                 {
-                    padding: 10px;
+                    /* border: 1px solid black; */
+                    border-radius: 25px;
+                    box-shadow: 5px 10px 5px lightgray;
+                    position: relative;
+                    height: 80%;
+                    width: 90%;
+                    margin-top: 10%;
+                    margin-left: 10%;
+                    padding-left: 43%;
                     color: black;
                     font-family: 'Trocchi', serif; 
-                    font-size: 30px; 
+                    font-size: 20px; 
                     font-weight: normal; 
                     line-height: 48px; 
-                    margin: 0;
+                    
+                    
+                    
+ 
                 }
             </style>
         </head>
@@ -113,8 +128,9 @@
                             // Create an "li" node:
                             var node = document.createElement("div");
                             node.className = "tree";
-                            node.innerHTML = '<p class="treetext">' + x[i].childNodes[1].innerHTML + "</p>" +
-                            '<img calss="treeimg" src="' + x[i].childNodes[0].innerHTML + '" alt="Tree" width="100" height="100">';
+                            node.innerHTML = 
+                            '<img src="' + x[i].childNodes[0].innerHTML + '" class="treeimage" alt="Tree">' +
+                            '<p class="treetext">' + x[i].childNodes[1].innerHTML + "</p>"; 
                             
                             //document.getElementsByTagName("div")
 
@@ -132,7 +148,8 @@
                         txt = "";
                         for (var i = 0; i< 26; i++) {
                             var chr = String.fromCharCode(65 + i);
-                          txt += '<section class ="sec">'  + '<p class = "sectext"> <a href="#>' + chr + '"</a>' + chr + '</p>' + "</section><br>";
+                          //txt += '<section class ="sec">'  + '<p class = "sectext"> <a href="#>' + chr + '"</a>' + chr + '</p>' + "</section><br>";
+                          txt += '<section class ="sec">'  + '<p class = "sectext">' + chr + '</p>' + "</section>";
                         }
                         document.getElementById("newHTML").innerHTML = txt;
                     

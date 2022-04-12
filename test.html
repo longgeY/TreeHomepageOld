@@ -5,6 +5,14 @@
             <meta charset="UTF-8">
             <meta name="author" content="Longge Yuan">
             <meta name="author" content="Himanshu Bhushan">
+
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <!-- bootstrap, jquery for collapsing sections A-Z -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
             <title>Tree Homepage</title>
 
             <link rel="stylesheet" href="Homepage.css">
@@ -21,7 +29,7 @@
                     margin-top: 0%;
                     height: 40px;
                 }
-                .tree
+                .sec>div
                 {
                     border: 1px solid transparent;
                     margin-left: auto;
@@ -110,6 +118,7 @@
                       xhttp.open("GET", '1.xml', true);
                       xhttp.send(); 
                   }
+                    //read xml, get images, tree name
                     function myFunction1(xml) 
                     {
                         var x, i, xmlDoc, txt;
@@ -127,7 +136,8 @@
 
                             // Create an "li" node:
                             var node = document.createElement("div");
-                            node.className = "tree";
+                            node.className = "tree" + txt;
+                           
                             node.innerHTML = 
                             '<img src="' + x[i].childNodes[0].innerHTML + '" class="treeimage" alt="Tree">' +
                             '<p class="treetext">' + x[i].childNodes[1].innerHTML + "</p>"; 
@@ -143,13 +153,19 @@
                        // document.getElementById("newHTML").innerHTML = txt;
                     }
                     
+                    //create sections A-Z
                     function createSections()
                     {
                         txt = "";
                         for (var i = 0; i< 26; i++) {
                             var chr = String.fromCharCode(65 + i);
+                            
                           //txt += '<section class ="sec">'  + '<p class = "sectext"> <a href="#>' + chr + '"</a>' + chr + '</p>' + "</section><br>";
-                          txt += '<section class ="sec">'  + '<p class = "sectext">' + chr + '</p>' + "</section>";
+                          txt += '<a href=".tree' +  chr + '" data-toggle="collapse">' + '<section class ="sec" id="' + chr + '">' + '<p class = "sectext">' + chr + '</p>' + "</section></a>";
+
+                        //   var parent = document.getElementById("sec");
+                        //     var child = parent.childNodes[i-1];
+                        //     parent.href = "child";
                         }
                         document.getElementById("newHTML").innerHTML = txt;
                     

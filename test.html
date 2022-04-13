@@ -18,10 +18,16 @@
             <link rel="stylesheet" href="Homepage.css">
 
             <style>
+                #newHTML
+                {
+                    
+                }
+                
                 .sec
                 {
                     border: 2px solid royalblue;
                     margin: 20px;
+                    background-color: aliceblue;
                 }
                 .sectext
                 {
@@ -38,7 +44,8 @@
                     margin-bottom: 50px;
                     width: 510px;
                     height: 190px;
-                    background: white;
+                    
+                    
                    /* border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
                     color: white;
                     box-shadow: 8px 8px rgba(0,0,0,.15);*/
@@ -61,6 +68,7 @@
                     /* border: 1px solid black; */
                     border-radius: 25px;
                     box-shadow: 5px 10px 5px lightgray;
+                    
                     position: relative;
                     height: 80%;
                     width: 90%;
@@ -72,10 +80,6 @@
                     font-size: 20px; 
                     font-weight: normal; 
                     line-height: 48px; 
-                    
-                    
-                    
- 
                 }
             </style>
         </head>
@@ -108,7 +112,8 @@
                     {
                       //Code to do XML HTTP request (see slides) goes here
                       var xhttp = new XMLHttpRequest();
-                      xhttp.onreadystatechange = function() {
+                      xhttp.onreadystatechange = function() 
+                      {
                           if (this.readyState == 4 && this.status == 200) {
                               // Run a function to handle XML data recv’d
                               myFunction1(this); //tree name
@@ -117,7 +122,7 @@
                       };
                       xhttp.open("GET", '1.xml', true);
                       xhttp.send(); 
-                  }
+                    }
                     //read xml, get images, tree name
                     function myFunction1(xml) 
                     {
@@ -128,18 +133,36 @@
                       // txt = x[1].childNodes[1].innerHTML;
                       // var imgLocation = x[1].childNodes[0].innerHTML;
                         //console.log(imgLocation);
+
+                        //if no image of tree, use default image
+                        var tempImg = "https://www.nicepng.com/png/full/184-1848288_chorus-tree-minecraft-chorus-tree.png";
+
                         for (i = 0; i< x.length; i++) {
                          // txt += "<li>" + x[i].childNodes[1].innerHTML + "</li><br>";
                             var txt = x[i].childNodes[1].innerHTML[0];
+                            var pic = x[i].childNodes[0].innerHTML;
+
+                            var id = x[i].childNodes[2].innerHTML;
+                            var idURL = "https://w3.winona.edu/locations/api/entities/" + id;
+
+                            //id.responseXML.getElementsByTagName('status')[0].firstChild.nodeValue
+                           
+
+
+
+                            if (pic=="")
+                            {
+                                pic = tempImg;
+                            }
                             //window.alert(txt);
                             var uni = txt.charCodeAt(0)- 65;
 
                             // Create an "li" node:
                             var node = document.createElement("div");
                             node.className = "tree" + txt;
-                           
+                            
                             node.innerHTML = 
-                            '<img src="' + x[i].childNodes[0].innerHTML + '" class="treeimage" alt="Tree">' +
+                            '<img src="' + pic + '" class="treeimage" alt="Tree">' +
                             '<p class="treetext">' + x[i].childNodes[1].innerHTML + "</p>"; 
                             
                             //document.getElementsByTagName("div")
@@ -147,6 +170,7 @@
                             document.getElementsByClassName("sec")[uni].appendChild (node);
                             
                             //window.alert("done");
+                            
                         }
                         //imgLoc2 = "<img src=" + imgLocation + ">";
                         
@@ -161,7 +185,7 @@
                             var chr = String.fromCharCode(65 + i);
                             
                           //txt += '<section class ="sec">'  + '<p class = "sectext"> <a href="#>' + chr + '"</a>' + chr + '</p>' + "</section><br>";
-                          txt += '<a href=".tree' +  chr + '" data-toggle="collapse">' + '<section class ="sec" id="' + chr + '">' + '<p class = "sectext">' + chr + '</p>' + "</section></a>";
+                          txt += '<a href=".tree' +  chr + '" data-toggle="collapse" aria-expanded="True">' + '<section class ="sec" id = "sec' + chr + '"><p class = "sectext">' + chr + '</p>' + "</section></a>";
 
                         //   var parent = document.getElementById("sec");
                         //     var child = parent.childNodes[i-1];
@@ -170,10 +194,47 @@
                         document.getElementById("newHTML").innerHTML = txt;
                     
                     }
+
+                    //Remove empty sections
+                    function rmEmptySections()
+                    {       
+                            var node = document.createElement("p");
+                            node.className = "emptyP";
+                            node.innerHTML = "Coming Soon!";
+                            document.getElementsByClassName("sec")[20].appendChild (node);
+
+                            var node = document.createElement("p");
+                            node.className = "emptyP";
+                            node.innerHTML = "Coming Soon!";
+                            document.getElementsByClassName("sec")[21].appendChild (node);
+
+                            var node = document.createElement("p");
+                            node.className = "emptyP";
+                            node.innerHTML = "Coming Soon!";
+                           document.getElementsByClassName("sec")[23].appendChild (node);
+
+                           var node = document.createElement("p");
+                            node.className = "emptyP";
+                            node.innerHTML = "Coming Soon!";
+                           document.getElementsByClassName("sec")[25].appendChild (node);
+
+                            
+                       // }
+                    }
+                        
+
+                        
+                    
+                    
+
+                    
+
                     createSections();
                     //window.alert(document.getElementsByClassName("newHtml").innerHTML);
                     //document.getElementsByClassName("sec")[0].innerHTML = "ok";
-                    loadXMLDoc() 
+                    loadXMLDoc();
+                    rmEmptySections();
+                   // $('.treeA').collapse(); 
                     </script>
                   </div>
                 </div>

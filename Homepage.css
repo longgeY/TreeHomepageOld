@@ -82,14 +82,15 @@ article {
 
 header {
     background-color: #666;
-    padding: 30px;
-    text-align: center;
+    text-align: left;
+    margin-left: 0%;
     font-size: 40px;
     color: white;
-    height: 1300px;
-    
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2d/Sugar_Loaf_Winona.jpg" );
-    background-position: 100%; 
+    height: 300px;
+}
+
+header iframe {
+    text-align: left;
 }
 
 @media (max-width: 600px) {

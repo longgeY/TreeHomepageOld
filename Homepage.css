@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+
+
 h1 {
     padding-top: 0px;
     font-size: 32px;
@@ -21,7 +23,7 @@ div#navbar {
     left:0px;
     z-index:100000;
     width: 100%;
-    background-color:purple;
+    background-color:rgb(74, 15, 163);
     height: 60px;
     opacity: 1.0;
     box-shadow: 0px 12px 18px rgba(19, 0, 182, 0.3);
@@ -47,7 +49,7 @@ div#navbar {
 }
 
 a:link{
-    color:#0b345e;
+    color:purple;
     /* font-weight: bold; */
     text-decoration: none;
 }
@@ -80,6 +82,7 @@ section::after {
 .leftmenu {
     flex: 10%;
     padding: 15px;
+    background-color: rgb(74, 15, 163);
 }
 
 header {
@@ -91,7 +94,7 @@ header {
     height: 350px;
     font: fantasy;
 
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2d/Sugar_Loaf_Winona.jpg" );
+    /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2d/Sugar_Loaf_Winona.jpg" ); */
     background-position: 100%; 
 }
 
@@ -112,7 +115,7 @@ footer {
 #mySearch {
     width: 100%;
     font-size: 18px;
-    padding: 11px;
+    margin-left: 6px;
     border: 1px solid #ddd;
 }
 
@@ -120,6 +123,14 @@ footer {
     flex: 10%;
     margin-right: auto;
     display: flex;
+}
+
+.listt{
+    background: linear-gradient(to right, rgb(53, 248, 4), rgb(125, 203, 255));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: system-ui;
+    font-weight: bold;
 }
 
 .collapsible {
@@ -144,3 +155,68 @@ footer {
     overflow: hidden;
     background-color: #f1f1f1;
 }
+
+             
+.sec
+{
+    border: 2px solid royalblue;
+    margin: 20px;
+    background-color: aliceblue;               
+}
+.sectext
+{
+    background-color: rgb(74, 15, 163);
+    margin-top: 0%;
+    height: 40px;
+    background: linear-gradient(to right, rgb(53, 248, 4), rgb(125, 203, 255));
+    font-family: system-ui;
+    font-weight: bold;
+}
+.sec>div
+{
+    border: 1px solid transparent;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    width: 1000px;
+    height: 190px;
+  
+
+    
+    
+    /* border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+    color: white;
+    box-shadow: 8px 8px rgba(0,0,0,.15);*/
+}
+.treetext:hover
+{
+    box-shadow: 2px 5px 5px lightgray;
+    
+}
+.treeimage
+{
+    width:130px; 
+    height:150px; 
+    border-radius: 25px; 
+    box-shadow: 5px 5px 5px lightgray;
+    position: absolute;
+}
+.treetext
+{
+    /* border: 1px solid black; */
+    border-radius: 25px;
+    box-shadow: 5px 10px 5px lightgray;
+    background-color:beige;
+    position: relative;
+    height: 80%;
+    width: 90%;
+    margin-top: 10%;
+    margin-left: 10%;
+    padding-left: 43%;
+    color: black;
+    font-family: 'Trocchi', serif; 
+    font-size: 20px; 
+    font-weight: normal; 
+    line-height: 48px; 
+}                              

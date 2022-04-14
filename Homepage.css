@@ -86,11 +86,18 @@ header {
     margin-left: 0%;
     font-size: 40px;
     color: white;
+<<<<<<< HEAD
     height: 300px;
 }
 
 header iframe {
     text-align: left;
+=======
+    height: 350px;
+    
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2d/Sugar_Loaf_Winona.jpg" );
+    background-position: 100%; 
+>>>>>>> 5333ac60d452e4390eabf3a06bf945cba19cab79
 }
 
 @media (max-width: 600px) {
@@ -117,3 +124,4 @@ footer {
 .row {
     display: flex;
 }
+

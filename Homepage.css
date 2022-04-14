@@ -3,7 +3,7 @@
 }
 
 h1 {
-    padding-top: 40px;
+    padding-top: 0px;
     font-size: 32px;
     text-align: center;
     position: relative;
@@ -72,32 +72,27 @@ section::after {
     clear: both;
 }
 
-article {
-    float: left;
-    padding: 20px;
-    width: 70%;
-    background-color: #f1f1f1;
-    height: 300px; /* only for demonstration, should be removed */
+.article {
+    flex: 65%;
+    padding: 15px;
+}
+
+.leftmenu {
+    flex: 10%;
+    padding: 15px;
 }
 
 header {
     background-color: #666;
-    text-align: left;
-    margin-left: 0%;
+    padding: 150px;
+    text-align: center;
     font-size: 40px;
     color: white;
-<<<<<<< HEAD
-    height: 300px;
-}
-
-header iframe {
-    text-align: left;
-=======
     height: 350px;
-    
+    font: fantasy;
+
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2d/Sugar_Loaf_Winona.jpg" );
     background-position: 100%; 
->>>>>>> 5333ac60d452e4390eabf3a06bf945cba19cab79
 }
 
 @media (max-width: 600px) {
@@ -122,6 +117,30 @@ footer {
 }
 
 .row {
+    flex: 10%;
+    margin-right: auto;
     display: flex;
 }
 
+.collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+  
+.active, .collapsible:hover {
+    background-color: #555;
+}
+  
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}

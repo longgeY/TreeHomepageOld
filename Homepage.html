@@ -8,30 +8,42 @@
             <title>Tree Homepage</title>
 
             <link rel="stylesheet" href="Homepage.css">
+            <script src="Homepage.js"></script>
         </head>
 
         <body>
             <header>
-                <iframe width="500" height="300" src="https://www.youtube.com/watch?v=7JPTlqRRf1w"></iframe>
                 <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Sugar_Loaf_Winona.jpg" title="Tree Home Page" > -->
                 <h1>Tree Home Page</h1>
             </header>
 
-            <section class="row">
-                <nav>
-                    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-                    <ul>
-                        <li><a href="#">A</a></li>
-                        <li><a href="#">B</a></li>
-                        <li><a href="#">C</a></li>
-                    </ul>
+            <section class="row" id="newList">
+                <nav class="leftmenu">
+                    <script>
+                        loadXMLDoc();
+                        //buildWordLists();
+                    </script>
+
+
+
+                    <input type="text" id="mySearch" onkeyup="Search()" placeholder="Search.." title="Type in a category">
+                    <ul id="menulist">
+                        <script>
+                            createLists()
+                            //loadXMLDoc();
+                        </script>
+                    </ul>     
                 </nav>
 
-                <div>   
+                <div class="article">   
                     <h1>London</h1>
                     <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
                     <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
                 </div>
+                <script>
+                    loadXMLDoc();
+                    //buildWordLists();
+                </script>
             </section>  
 
             <div id="navbar">
